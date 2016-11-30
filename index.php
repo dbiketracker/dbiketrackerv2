@@ -21,14 +21,14 @@
         $db = $conn->heroku_2g7zhsrw;
         echo (" **Connection to database successful** ");
         echo($conn);
-        $collection = $db->stations;
-        echo " **Station database selected**  <br><br>";
+    //    $collection = $db->stations;
+  //      echo " **Station database selected**  <br><br>";
        
 
         $dbd = json_decode($json_array);
         print_r($dbd);
 //        $collection->insert($dbd);
-        $conn->close();
+//        $conn->close();
         ?>
     </head>
 </html>
