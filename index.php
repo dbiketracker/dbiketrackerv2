@@ -26,7 +26,7 @@
        
 
         $dbd = json_decode($json_array, true);
-        echo $data[0]->number->name[0]->value; 
+        echo $dbd[0]->number->name[0]->value; 
 //        print_r($dbd);
 //        $collection->insert($dbd);
         $conn->close();
