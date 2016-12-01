@@ -27,6 +27,10 @@
 
         $dbd = json_decode($json_array, true);
         echo $dbd[0]->number->name[0]->value; 
+        $url="http://www.worldweatheronline.com/feed/weather.ashx?q=schruns,austria&format=json&num_of_days=5&key=8f2d1ea151085304102710";
+$json = file_get_contents($url);
+$data = json_decode($json, TRUE);
+echo $data[0]->weather->weatherIconUrl[0]->value;   
 //        print_r($dbd);
 //        $collection->insert($dbd);
         $conn->close();
