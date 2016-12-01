@@ -34,7 +34,7 @@
 //        $collection = $db->stationsv2;
         $collection = new MongoCollection($db, 'locations');
         echo " **Station database selected**  <br><br>";
-        $queryLoc = array('banking' => '1');
+        $queryLoc = array('status' => 'OPEN');
         
 
         $cursor = $collection->find($queryLoc);
