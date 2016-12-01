@@ -16,10 +16,8 @@
         //convert the json to a php array for query
         $decode = json_decode($json_array, true);
         print_r($decode);
-
-        //$converted = json_decode($json_array,true);
-        //print_r($json_array);
-
+        $query = //$converted = json_decode($json_array,true);
+                //print_r($json_array);
 //        foreach ($json_array['number']['name'] as $item) {
 //            print $item['number'];
 //            print '<br>';
@@ -28,13 +26,19 @@
 
 
 
-        $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
+                $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
         $conn = new Mongo($uri);
         $db = $conn->heroku_2g7zhsrw;
         echo (" **Connection to database successful** ");
         echo($conn);
-        $collection = $db->stationsv2;
+//        $collection = $db->stationsv2;
+        $collection = new MongoCollection($db, 'locations');
         echo " **Station database selected**  <br><br>";
+        $queryLoc = array('position' => 'lat', 'long');
+        $cursor = $collection->find($queryLoc);
+        foreach ($cursor as $doc) {
+            var_dump($doc);
+        }
 
 
 
