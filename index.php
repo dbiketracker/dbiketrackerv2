@@ -11,6 +11,7 @@
         //phpinfo();
         $url = "https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=ec447add626cfb0869dd4747a7e50e21d39d1850";
         $json_array = file_get_contents($url);
+        print_r($json_array);
 
         //$converted = json_decode($json_array,true);
         //print_r($json_array);
