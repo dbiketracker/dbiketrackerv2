@@ -40,7 +40,7 @@
         $cursor = $collection->find($queryLoc);
         foreach ($cursor as $doc) {
             var_dump($doc);
-            print_r($queryLoc);
+            print_r($doc);
         }
 
 //        $dbd = json_decode($json_array, true);
