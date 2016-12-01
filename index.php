@@ -35,11 +35,7 @@
         $collection = new MongoCollection($db, 'locations');
         echo " **Station database selected**  <br><br>";
         $queryLoc = array('position' => 'lat', 'long');
-        $cursor = $collection->find($queryLoc);
-        foreach ($cursor as $doc) {
-            var_dump($doc);
-        }
-
+        print_r($queryLoc);
 
 
 
