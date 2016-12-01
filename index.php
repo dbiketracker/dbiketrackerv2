@@ -34,7 +34,7 @@
 //        $collection = $db->stationsv2;
         $collection = new MongoCollection($db, 'locations');
         echo " **Station database selected**  <br><br>";
-        $queryLoc = array('contract_name' => 'Dublin');
+        $queryLoc = array('name' => 'SMITHFIELD NORTH');
         
 
         $cursor = $collection->find($queryLoc);
