@@ -17,7 +17,7 @@
             print " - ";
             print $item['name'];
         }
-        print_r($json);
+//        print_r($json);
         //$converted = json_decode($json_array,true);
         //print_r($json_array);
 
