@@ -25,9 +25,10 @@
         echo " **Station database selected**  <br><br>";
        
 
-        $dbd = json_decode($json_array);
-        print_r($dbd);
-        $collection->insert($dbd);
+        $dbd = json_decode($json_array, true);
+        echo $data[0]->number->name[0]->value; 
+//        print_r($dbd);
+//        $collection->insert($dbd);
         $conn->close();
         ?>
     </head>
