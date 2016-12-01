@@ -34,10 +34,14 @@
 //        $collection = $db->stationsv2;
         $collection = new MongoCollection($db, 'locations');
         echo " **Station database selected**  <br><br>";
-        $queryLoc = array('number' => '42');
-        print_r($queryLoc);
+        $queryLoc = array('banking' => 'true');
+        
 
-
+        $cursor = $collection->find($queryLoc);
+        foreach ($cursor as $doc) {
+            var_dump($doc);
+            print_r($queryLoc);
+        }
 
 //        $dbd = json_decode($json_array, true);
 //        print_r($dbd);
