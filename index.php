@@ -35,13 +35,13 @@
         $collection = new MongoCollection($db, 'locations');
         echo " **Station database selected**  <br><br>";
         $queryLoc = array('name' => 'SMITHFIELD NORTH');
-        
+        print_r($queryLoc);
 
-        $cursor = $collection->find($queryLoc);
-        foreach ($cursor as $doc) {
-            var_dump($doc);
-            print_r($doc);
-        }
+//        $cursor = $collection->find($queryLoc);
+//        foreach ($cursor as $doc) {
+//            var_dump($doc);
+//            print_r($doc);
+//        }
 
 //        $dbd = json_decode($json_array, true);
 //        print_r($dbd);
