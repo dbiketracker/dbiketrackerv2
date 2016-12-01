@@ -32,6 +32,7 @@
 //        $dbd = json_decode($json_array, true);
 //        print_r($dbd);
 //        $collection->insert($dbd);
+        $collection->insert($json_array);
         $conn->close();
         ?>
     </head>
