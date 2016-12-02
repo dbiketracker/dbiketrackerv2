@@ -18,7 +18,8 @@
 //        print_r($decoded);
 //        print_r($dbikeinfo[1]['name']);
         for ($i = 0; $i <= count($dbikeinfo); $i++) {
-            print_r($dbikeinfo[$i]['name']);
+            print_r($dbikeinfo[$i]['name']['position']);
+            print "\n";
             $i++;
         }
 
