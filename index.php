@@ -16,11 +16,7 @@
         //convert the json to a php array for query
         $decoded = json_decode($json_array, true);
 //        print_r($decoded);
-        foreach ($decoded as $station) {
-            echo $decoded->name[];
-            
-        }
-
+        echo $decoded->name[42];
 
 
 
