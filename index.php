@@ -16,7 +16,7 @@
         //convert the json to a php array for query
         $decoded = json_decode($json_array, true);
 //        print_r($decoded);
-        print_r ($decoded);
+        print $decoded->{'position'};
 
 
 
