@@ -16,9 +16,7 @@
         //convert the json to a php array for query
         $dbikeinfo = json_decode($json_array, true);
 //        print_r($decoded);
-        foreach($dbikeinfo as $station_name){
-            print $dbikeinfo['name'];
-        }
+          print_r($dbikeinfo[1]['name']);
 
 
 
