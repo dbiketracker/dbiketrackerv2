@@ -14,9 +14,9 @@
 //        //so we are using valid json
 //        print_r($json_array);
         //convert the json to a php array for query
-        $decoded = json_decode($json_array);
+        $decoded = json_decode($json_array, true);
 //        print_r($decoded);
-        print_r ($decoded->name[42]);
+        print_r ($decoded['position']['lat']);
 
 
 
