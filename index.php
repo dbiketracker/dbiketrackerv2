@@ -15,9 +15,12 @@
 //        print_r($json_array);
         //convert the json to a php array for query
         $decode = json_decode($json_array, true);
-        print_r($decode[42]);
-        
-        
+        print_r($decode);
+        foreach ($decode as $decode) {
+            echo $decode, "\n";
+        }
+
+
 
 
 
