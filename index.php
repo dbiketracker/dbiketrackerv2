@@ -14,10 +14,11 @@
 //        //so we are using valid json
 //        print_r($json_array);
         //convert the json to a php array for query
-        $decoded = json_decode($json_array);
+        $dbikeinfo = json_decode($json_array, true);
 //        print_r($decoded);
-        print $decoded->{'name'};
-
+        foreach($dbikeinfo as $station_name){
+            print $dbikeinfo['name'];
+        }
 
 
 
