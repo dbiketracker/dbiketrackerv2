@@ -16,7 +16,11 @@
         //convert the json to a php array for query
         $dbikeinfo = json_decode($json_array, true);
 //        print_r($decoded);
-          print_r($dbikeinfo[1]['name']);
+//        print_r($dbikeinfo[1]['name']);
+        for ($i = 0; $i <= count($dbikeinfo); $i++) {
+            print_r($dbikeinfo[$i]['name']);
+            $i++;
+        }
 
 
 
