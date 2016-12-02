@@ -16,7 +16,7 @@
         //convert the json to a php array for query
         $decoded = json_decode($json_array);
 //        print_r($decoded);
-        echo $decoded->name[42];
+        print_r ($decoded->name[42]);
 
 
 
