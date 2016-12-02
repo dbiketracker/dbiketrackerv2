@@ -14,10 +14,11 @@
 //        //so we are using valid json
 //        print_r($json_array);
         //convert the json to a php array for query
-        $decode = json_decode($json_array, true);
-//        print_r($decode);
-        foreach ($decode as $station) {
-            echo $station, "name";
+        $decoded = json_decode($json_array, true);
+//        print_r($decoded);
+        foreach ($decoded as $station) {
+            echo $decoded->name[];
+            
         }
 
 
