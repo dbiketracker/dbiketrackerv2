@@ -19,6 +19,7 @@
 //        print_r($dbikeinfo[1]['name']);
         for ($i = 0; $i <= count($dbikeinfo); $i++) {
             print_r($dbikeinfo[$i]['position']);
+            print_r($dbikeinfo[$i]['name']);
             print "\n";
             $i++;
         }
