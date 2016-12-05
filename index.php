@@ -13,15 +13,16 @@
         $json_array = file_get_contents($url);
 //        //so we are using valid json
 //        print_r($json_array);
-        //convert the json to a php array for query
+        //convert the json to a php assoc array for query
         $dbikeinfo = json_decode($json_array, true);
 //        print_r($decoded);
 //        print_r($dbikeinfo[1]['name']);
         for ($i = 0; $i <= count($dbikeinfo); $i++) {
             print_r($dbikeinfo[$i]['position']);
             print_r($dbikeinfo[$i]['name']);
-            print "\n";
             $i++;
+            $collection->insert($dbikeinfo[$i]['name']);
+            $collection->insert($dbikeinfo[$i]['position']);
         }
 
 
