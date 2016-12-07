@@ -19,12 +19,13 @@
         
 
         for ($i = 0; $i <= count($dbikeinfo); $i++) {
-            $location_name[] = array('name' => 'name'.$i, 'i' => $i);
-            print_r($location_name);
-            print_r($dbikeinfo[$i]['name']);
+            $position = ($dbikeinfo[$i]['position']);
+            $location_name = ($dbikeinfo[$i]['name']);
             $i++;
         }
-
+        
+        print_r($position);
+        print_r($location_name);
 
 
         $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
