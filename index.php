@@ -16,16 +16,17 @@
         //array for the locations and name of the stations
         $location_name = array();
         $position = array();
-        
+
 
         for ($i = 0; $i <= count($dbikeinfo); $i++) {
             $position = array($dbikeinfo[$i]['position']);
             $location_name = array($dbikeinfo[$i]['name']);
+            print_r($position);
+            print_r($location_name);
             $i++;
         }
-        
-        print_r($position);
-        print_r($location_name);
+
+
 
 
         $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
