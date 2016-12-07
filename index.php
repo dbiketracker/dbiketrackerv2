@@ -11,18 +11,18 @@
         //phpinfo();
         $url = "https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=ec447add626cfb0869dd4747a7e50e21d39d1850";
         $json_array = file_get_contents($url);
-//        //so we are using valid json
-//        print_r($json_array);
         //convert the json to a php assoc array for query
         $dbikeinfo = json_decode($json_array, true);
-//        print_r($decoded);
-//        print_r($dbikeinfo[1]['name']);
+        //array for the locations and name of the stations
+        $location_name = array();
+        $position = array();
+        
+
         for ($i = 0; $i <= count($dbikeinfo); $i++) {
-            print_r($dbikeinfo[$i]['position']);
+            $location_name[] = array('name' => 'name'.$i, 'i' => $i);
+            print_r($location_name);
             print_r($dbikeinfo[$i]['name']);
             $i++;
-            $collection->insert($dbikeinfo[$i]['name']);
-            $collection->insert($dbikeinfo[$i]['position']);
         }
 
 
