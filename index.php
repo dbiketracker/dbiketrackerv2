@@ -18,7 +18,7 @@
         $position = array();
 
 
-        
+
         //collection for the locations
 //        $loc_collection->insert($merged);
 //        var_dump($merged);
@@ -31,16 +31,21 @@
         echo (" **Connection to database successful** ");
         echo($conn);
 //        $collection = $db->locations;
-for ($i = 0; $i <= count($dbikeinfo); $i++) {
+        for ($i = 0; $i <= count($dbikeinfo); $i++) {
             $position = array($dbikeinfo[$i]['position']);
             $location_name = array($dbikeinfo[$i]['name']);
 //            print_r($position);
 //            print_r($location_name);
             $merged = array_merge($location_name, $position);
             print_r($merged);
-            $loc_collection = $db->locations;
-            $loc_collection->insert($merged);
-            var_dump($merged);
+
+            function insert_cow($loc_collection, $merged) {
+                $merged['y'] = 1;
+                $loc_collection->insert($merged);
+                insert_cow($loc_collection, $merged);
+                var_dump($merged);
+            }
+
             $i++;
         }
 
