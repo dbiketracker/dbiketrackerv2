@@ -23,16 +23,16 @@
             $location_name = array($dbikeinfo[$i]['name']);
 //            print_r($position);
 //            print_r($location_name);
-            $merged = array_merge($position, $location_name);
+            $merged = array_merge( $location_name, $position);
             print_r($merged);
             $i++;
         }
 
         //collection for the locations
-        $loc_collection = $conn->$db->locations;
+        $loc_collection = $db->locations;
 //        $loc_collection->drop();
          
-        $loc_collection->batchInsert($position . $location_name);
+        $loc_collection->batchInsert($merged);
 //        foreach ($location_name . $position as $loc) {
 //            echo $location_name['_id'] . "\n"; // populated with instanceof MongoId
 //        }
