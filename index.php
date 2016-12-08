@@ -23,23 +23,21 @@
             $location_name = array($dbikeinfo[$i]['name']);
 //            print_r($position);
 //            print_r($location_name);
-            $merged = array_merge( $location_name, $position);
+            $merged = array_merge($location_name, $position);
             print_r($merged);
             $i++;
         }
 
         //collection for the locations
         $loc_collection = $db->locations;
-//        $loc_collection->drop();
-         
-        $loc_collection->insert($merged);
+
+
+//        $loc_collection->insert($merged);
         var_dump($merged);
-//        foreach ($location_name . $position as $loc) {
-//            echo $location_name['_id'] . "\n"; // populated with instanceof MongoId
-//        }
 
-//        $stations = $collection->find()->sort(array('i' => 1));
-
+        function insert_no_cow($loc_collection, $merged) {
+            $loc_collection->insert($merged);
+        }
 
         $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
         $conn = new Mongo($uri);
