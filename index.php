@@ -33,6 +33,7 @@
 //        $loc_collection->drop();
          
         $loc_collection->insert($merged);
+        var_dump($merged);
 //        foreach ($location_name . $position as $loc) {
 //            echo $location_name['_id'] . "\n"; // populated with instanceof MongoId
 //        }
