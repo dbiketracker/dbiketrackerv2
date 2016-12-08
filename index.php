@@ -23,17 +23,18 @@
             $location_name = array($dbikeinfo[$i]['name']);
             print_r($position);
             print_r($location_name);
+            print_r(array_values($position));
             $i++;
         }
 
         //collection for the locations
         $loc_collection = $conn->$db->locations;
 //        $loc_collection->drop();
-
+         
         $loc_collection->batchInsert($position . $location_name);
-        foreach ($location_name . $position as $loc) {
-            echo $location_name['_id'] . "\n"; // populated with instanceof MongoId
-        }
+//        foreach ($location_name . $position as $loc) {
+//            echo $location_name['_id'] . "\n"; // populated with instanceof MongoId
+//        }
 
 //        $stations = $collection->find()->sort(array('i' => 1));
 
