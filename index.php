@@ -31,15 +31,15 @@
         //collection for the locations
         $loc_collection = $db->locations;
 
-
 //        $loc_collection->insert($merged);
 //        var_dump($merged);
 
-        function insert_no_cow($loc_collection, $merged) {
+        function insert_cow($loc_collection, $merged) {
+            $merged['y'] = 1;
             $loc_collection->insert($merged);
         }
 
-        insert_no_cow($loc_collection, $merged);
+        insert_cow($loc_collection, $merged);
         var_dump($merged);
 
         $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
