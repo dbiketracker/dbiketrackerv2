@@ -27,19 +27,19 @@
         }
 
         //collection for the locations
-        $loc_collection = $mongo->$db->locations;
+        $loc_collection = $conn->$db->locations;
 //        $loc_collection->drop();
 
         $loc_collection->batchInsert($position . $location_name);
-        foreach ($location_name.$position as $loc) {
-  echo $location_name['_id']."\n"; // populated with instanceof MongoId
-}
+        foreach ($location_name . $position as $loc) {
+            echo $location_name['_id'] . "\n"; // populated with instanceof MongoId
+        }
 
 //        $stations = $collection->find()->sort(array('i' => 1));
-        
+
 
         $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
-        $mongo = new Mongo($uri);
+        $conn = new Mongo($uri);
         $db = $conn->heroku_2g7zhsrw;
         echo (" **Connection to database successful** ");
         echo($conn);
