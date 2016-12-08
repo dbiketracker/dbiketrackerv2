@@ -18,16 +18,7 @@
         $position = array();
 
 
-        for ($i = 0; $i <= count($dbikeinfo); $i++) {
-            $position = array($dbikeinfo[$i]['position']);
-            $location_name = array($dbikeinfo[$i]['name']);
-//            print_r($position);
-//            print_r($location_name);
-            $merged = array_merge($location_name, $position);
-            print_r($merged);
-            $i++;
-        }
-
+        
         //collection for the locations
 //        $loc_collection->insert($merged);
 //        var_dump($merged);
@@ -40,9 +31,19 @@
         echo (" **Connection to database successful** ");
         echo($conn);
 //        $collection = $db->locations;
-        $loc_collection = $db->locations;
-        $loc_collection->insert($merged);
-        var_dump($merged);
+for ($i = 0; $i <= count($dbikeinfo); $i++) {
+            $position = array($dbikeinfo[$i]['position']);
+            $location_name = array($dbikeinfo[$i]['name']);
+//            print_r($position);
+//            print_r($location_name);
+            $merged = array_merge($location_name, $position);
+            print_r($merged);
+            $loc_collection = $db->locations;
+            $loc_collection->insert($merged);
+            var_dump($merged);
+            $i++;
+        }
+
         echo " **Station database selected**  <br><br>";
 
 //        $dbd = json_decode($json_array, true);
