@@ -45,7 +45,7 @@
         $db = $conn->heroku_2g7zhsrw;
         echo (" **Connection to database successful** ");
         echo($conn);
-        $collection = $db->locations;
+//        $collection = $db->locations;
         echo " **Station database selected**  <br><br>";
 
 //        $dbd = json_decode($json_array, true);
