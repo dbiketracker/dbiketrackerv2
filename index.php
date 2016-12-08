@@ -28,9 +28,12 @@
 
         //collection for the locations
         $loc_collection = $mongo->$db->locations;
-        $loc_collection->drop();
+//        $loc_collection->drop();
 
         $loc_collection->batchInsert($position . $location_name);
+        foreach ($location_name.$position as $loc) {
+  echo $location_name['_id']."\n"; // populated with instanceof MongoId
+}
 
 //        $stations = $collection->find()->sort(array('i' => 1));
         
