@@ -23,7 +23,8 @@
             $location_name = array($dbikeinfo[$i]['name']);
 //            print_r($position);
 //            print_r($location_name);
-            array_merge($position, $location_name);
+            $merged = array_merge($position, $location_name);
+            print_r($merged);
             $i++;
         }
 
