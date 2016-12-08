@@ -21,8 +21,8 @@
         for ($i = 0; $i <= count($dbikeinfo); $i++) {
             $position = array($dbikeinfo[$i]['position']);
             $location_name = array($dbikeinfo[$i]['name']);
-            print_r($position);
-            print_r($location_name);
+//            print_r($position);
+//            print_r($location_name);
             print_r(array_values($position));
             $i++;
         }
