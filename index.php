@@ -29,13 +29,10 @@
         }
 
         //collection for the locations
-        $loc_collection = $db->locations;
-
 //        $loc_collection->insert($merged);
 //        var_dump($merged);
 
-        $loc_collection->insert($merged);
-var_dump($merged);
+
 
         $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
         $conn = new Mongo($uri);
@@ -43,6 +40,9 @@ var_dump($merged);
         echo (" **Connection to database successful** ");
         echo($conn);
 //        $collection = $db->locations;
+        $loc_collection = $db->locations;
+        $loc_collection->insert($merged);
+        var_dump($merged);
         echo " **Station database selected**  <br><br>";
 
 //        $dbd = json_decode($json_array, true);
