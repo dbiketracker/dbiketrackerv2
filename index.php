@@ -35,11 +35,10 @@
         $position = array($dbikeinfo['position']);
         $location_name = array($dbikeinfo['name']);
         $merged = array_merge($location_name, $position);
-        foreach ($merged as list($a)) {
-            // Note that there is no $b here.
-            echo "$a\n";
-            var_dump($merged);
-        }
+        foreach($merged as $element): 
+            #do something 
+            print_r($element);
+          endforeach; 
 //        for ($i = 0; $i < count($dbikeinfo); $i++) {
 //            $position = array($dbikeinfo[$i]['position']);
 //            $location_name = array($dbikeinfo[$i]['name']);
