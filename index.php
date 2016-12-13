@@ -42,7 +42,6 @@
 //                var_dump($merged);
 //            }
 
-            $i++;
         }
 
         echo " **Station database selected**  <br><br>";
