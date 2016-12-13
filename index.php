@@ -35,12 +35,10 @@
             $merged = array_merge($location_name, $position);
             print_r($merged);
 
-            function insert_no_cow($collection, $merged) {
-                $collection->insert($merged);
-            }
-
-
-            insert_no_cow($collection, $merged);
+            
+            
+            $collection->insert($merged);
+            var_dump($ref);
         }
 
         echo " **Station database selected**  <br><br>";
