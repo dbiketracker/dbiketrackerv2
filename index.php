@@ -39,9 +39,8 @@
                 $collection->insert($merged);
             }
 
-            $c = array('x' => 0);
-            insert_no_cow($collection, $c);
-            var_dump($c);
+
+            insert_no_cow($collection, $merged);
         }
 
         echo " **Station database selected**  <br><br>";
