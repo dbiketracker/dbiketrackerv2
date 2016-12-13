@@ -7,7 +7,7 @@
         <?php
         ini_set('memory_limit', '1024M');
         ini_set("allow_url_fopen", 1);
-        
+
         $api_key = "ec447add626cfb0869dd4747a7e50e21d39d1850";
         $contract_name = "Dublin";
         //phpinfo();
@@ -24,6 +24,8 @@
         echo (" **Connection to database successful** ");
         echo($conn);
         $collection = $db->locations;
+        //count the size of the array
+        $size = count($dbikeinfo);
 
         for ($i = 0; $i < count($dbikeinfo); $i++) {
             $position = array($dbikeinfo[$i]['position']);
@@ -33,15 +35,13 @@
             $merged = array_merge($location_name, $position);
             print_r($merged);
 
-            
+            function insert_no_cow($collection, $merged) {
+                $collection->insert($merged);
+            }
 
-//            function insert_cow($loc_collection, $merged) {
-//                $merged['y'] = 1;
-//                $loc_collection->insert($merged);
-//                insert_cow($loc_collection, $merged);
-//                var_dump($merged);
-//            }
-
+            $c = array('x' => 0);
+            insert_no_cow($collection, $c);
+            var_dump($c);
         }
 
         echo " **Station database selected**  <br><br>";
