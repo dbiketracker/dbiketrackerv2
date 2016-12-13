@@ -16,48 +16,32 @@
         //array for the locations and name of the stations
         $location_name = array();
         $position = array();
-
-
-
-
-        //collection for the locations
-//        $loc_collection->insert($merged);
-//        var_dump($merged);
-
-
-
         $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
         $conn = new Mongo($uri);
         $db = $conn->heroku_2g7zhsrw;
         echo (" **Connection to database successful** ");
         echo($conn);
         $collection = $db->locations;
-        $position = array($dbikeinfo['position']);
-        $location_name = array($dbikeinfo['name']);
-        $merged = array_merge($location_name, $position);
-        foreach($merged as $element): 
-            #do something 
-            print_r($element);
-          endforeach; 
-//        for ($i = 0; $i < count($dbikeinfo); $i++) {
-//            $position = array($dbikeinfo[$i]['position']);
-//            $location_name = array($dbikeinfo[$i]['name']);
-////            print_r($position);
-////            print_r($location_name);
-//            $merged = array_merge($location_name, $position);
-//            print_r($dbikeinfo);
-//
-//            
-//
-////            function insert_cow($loc_collection, $merged) {
-////                $merged['y'] = 1;
-////                $loc_collection->insert($merged);
-////                insert_cow($loc_collection, $merged);
-////                var_dump($merged);
-////            }
-//
-//            $i++;
-//        }
+
+        for ($i = 0; $i < 10; $i++) {
+            $position = array($dbikeinfo[$i]['position']);
+            $location_name = array($dbikeinfo[$i]['name']);
+//            print_r($position);
+//            print_r($location_name);
+            $merged = array_merge($location_name, $position);
+            print_r($merged);
+
+            
+
+//            function insert_cow($loc_collection, $merged) {
+//                $merged['y'] = 1;
+//                $loc_collection->insert($merged);
+//                insert_cow($loc_collection, $merged);
+//                var_dump($merged);
+//            }
+
+            $i++;
+        }
 
         echo " **Station database selected**  <br><br>";
 
