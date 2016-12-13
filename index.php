@@ -40,10 +40,12 @@
             $merged = array_merge($location_name, $position);
             print_r($merged);
 
-            function insert_no_cow($collection, $merged)
-{
-    $collection->insert($merged);
-}
+//            function insert_cow($loc_collection, $merged) {
+//                $merged['y'] = 1;
+//                $loc_collection->insert($merged);
+//                insert_cow($loc_collection, $merged);
+//                var_dump($merged);
+//            }
 
             $i++;
         }
