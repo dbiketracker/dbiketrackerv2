@@ -39,6 +39,7 @@
 //            print_r($location_name);
             $merged = array_merge($location_name, $position);
             print_r($merged);
+            print_r(count($merged));
 
 //            function insert_cow($loc_collection, $merged) {
 //                $merged['y'] = 1;
