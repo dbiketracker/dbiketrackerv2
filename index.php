@@ -5,7 +5,9 @@
     <title>dbiketracker</title>
     <head>
         <?php
+        ini_set('memory_limit', '1024M');
         ini_set("allow_url_fopen", 1);
+        
         $api_key = "ec447add626cfb0869dd4747a7e50e21d39d1850";
         $contract_name = "Dublin";
         //phpinfo();
