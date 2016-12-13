@@ -23,7 +23,7 @@
         echo($conn);
         $collection = $db->locations;
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 200; $i++) {
             $position = array($dbikeinfo[$i]['position']);
             $location_name = array($dbikeinfo[$i]['name']);
 //            print_r($position);
