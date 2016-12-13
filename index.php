@@ -16,7 +16,7 @@
         //array for the locations and name of the stations
         $location_name = array();
         $position = array();
-        
+
 
 
 
@@ -32,27 +32,33 @@
         echo (" **Connection to database successful** ");
         echo($conn);
         $collection = $db->locations;
-        for ($i = 0; $i < count($dbikeinfo); $i++) {
-            $position = array($dbikeinfo[$i]['position']);
-            $location_name = array($dbikeinfo[$i]['name']);
-            $result = count($location_name);
-//            print_r($position);
-//            print_r($location_name);
-            $merged = array_merge($location_name, $position);
-            print_r($dbikeinfo);
-
-            
-
-//            function insert_cow($loc_collection, $merged) {
-//                $merged['y'] = 1;
-//                $loc_collection->insert($merged);
-//                insert_cow($loc_collection, $merged);
-//                var_dump($merged);
-//            }
-
-            $i++;
+        $position = array($dbikeinfo['position']);
+        $location_name = array($dbikeinfo['name']);
+        $merged = array_merge($location_name, $position);
+        foreach ($merged as list($a)) {
+            // Note that there is no $b here.
+            echo "$a\n";
         }
-        
+//        for ($i = 0; $i < count($dbikeinfo); $i++) {
+//            $position = array($dbikeinfo[$i]['position']);
+//            $location_name = array($dbikeinfo[$i]['name']);
+////            print_r($position);
+////            print_r($location_name);
+//            $merged = array_merge($location_name, $position);
+//            print_r($dbikeinfo);
+//
+//            
+//
+////            function insert_cow($loc_collection, $merged) {
+////                $merged['y'] = 1;
+////                $loc_collection->insert($merged);
+////                insert_cow($loc_collection, $merged);
+////                var_dump($merged);
+////            }
+//
+//            $i++;
+//        }
+
         echo " **Station database selected**  <br><br>";
 
 //        $dbd = json_decode($json_array, true);
