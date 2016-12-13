@@ -16,6 +16,7 @@
         //array for the locations and name of the stations
         $location_name = array();
         $position = array();
+        
 
 
 
@@ -30,8 +31,8 @@
         $db = $conn->heroku_2g7zhsrw;
         echo (" **Connection to database successful** ");
         echo($conn);
-//        $collection = $db->locations;
-        for ($i = 0; $i <= count($dbikeinfo); $i++) {
+        $collection = $db->locations;
+        for ($i = 0; $i <= 100; $i++) {
             $position = array($dbikeinfo[$i]['position']);
             $location_name = array($dbikeinfo[$i]['name']);
 //            print_r($position);
@@ -48,7 +49,7 @@
 
             $i++;
         }
-
+        
         echo " **Station database selected**  <br><br>";
 
 //        $dbd = json_decode($json_array, true);
