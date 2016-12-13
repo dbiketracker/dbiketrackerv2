@@ -39,7 +39,7 @@
 //            print_r($position);
 //            print_r($location_name);
             $merged = array_merge($location_name, $position);
-            print_r($location_name);
+            print_r($dbikeinfo);
 
             
 
