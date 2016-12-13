@@ -35,11 +35,12 @@
         for ($i = 0; $i < count($dbikeinfo); $i++) {
             $position = array($dbikeinfo[$i]['position']);
             $location_name = array($dbikeinfo[$i]['name']);
+            $result = count($location_name);
 //            print_r($position);
 //            print_r($location_name);
             $merged = array_merge($location_name, $position);
             print_r($merged);
-            print_r(count($location_name));
+            print_r($result);
             
 
 //            function insert_cow($loc_collection, $merged) {
