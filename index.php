@@ -32,7 +32,7 @@
         echo (" **Connection to database successful** ");
         echo($conn);
         $collection = $db->locations;
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i <= count($dbikeinfo); $i++) {
             $position = array($dbikeinfo[$i]['position']);
             $location_name = array($dbikeinfo[$i]['name']);
 //            print_r($position);
