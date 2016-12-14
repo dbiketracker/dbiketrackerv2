@@ -15,38 +15,29 @@
         $json_array = file_get_contents($url);
         //convert the json to a php assoc array for query
         $dbikeinfo = json_decode($json_array, true);
-        //array for the locations and name of the stations
-        $location_name = array();
-        $position = array();
+        //connection settings
+        //uri to connect to our db
         $uri = "mongodb://heroku_2g7zhsrw:fptu2g7faerobjk513p7frl9sq@ds013222.mlab.com:13222/heroku_2g7zhsrw";
+        //connection using the new Mongo connection
         $conn = new Mongo($uri);
+        //connect to the specific database labelled heroku_2g7zhsrw
         $db = $conn->heroku_2g7zhsrw;
+        //echo that our connection was successful
         echo (" **Connection to database successful** ");
         echo($conn);
-        $collection = $db->locations;
-        //count the size of the array
-        $size = count($dbikeinfo);
 
-        for ($i = 0; $i < count($dbikeinfo); $i++) {
-            $position = array($dbikeinfo[$i]['position']);
-            $location_name = array($dbikeinfo[$i]['name']);
-//            print_r($position);
-//            print_r($location_name);
-            $merged = array_merge($location_name, $position);
-            print_r($merged);
+        $locQuery = array('name' => 'S');
 
-            
-            
-            $collection->insert($merged);
-            var_dump($ref);
+        $cursor = $collection->find($locQuery);
+        foreach ($cursor as $doc) {
+            var_dump($doc);
         }
 
-        echo " **Station database selected**  <br><br>";
 
-//        $dbd = json_decode($json_array, true);
-//        print_r($dbd);
-//        $collection->insert($dbd);
-//        $collection->insert($json_array);
+
+
+
+        //close the connection
         $conn->close();
         ?>
     </head>
