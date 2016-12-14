@@ -26,7 +26,7 @@
         echo (" **Connection to database successful** ");
         echo($conn);
 
-        $locQuery = array('name' => 'S');
+        $locQuery = array('name' => 'position');
 
         $cursor = $collection->find($locQuery);
         foreach ($cursor as $doc) {
