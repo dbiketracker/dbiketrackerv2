@@ -27,12 +27,18 @@
         echo($conn);
         //collection for querying
         $collection = $db->locations;
-        
 
-        $js = "function() {return this.name == 'SMITHFIELD NORTH';}";
-        $cursor = $collection->find(array('$where' => $js));
+
+//        $js = "function() {return this.name == 'SMITHFIELD NORTH';}";
+//        $cursor = $collection->find(array('$where' => $js));
+//        foreach ($cursor as $doc) {
+//            print_r($doc);
+//        }
+        $locQuery = array('name');
+
+        $cursor = $collection->find($locQuery);
         foreach ($cursor as $doc) {
-            print_r($doc);
+            var_dump($doc);
         }
 
 
