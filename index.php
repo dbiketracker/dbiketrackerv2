@@ -38,7 +38,7 @@
 
         $cursor = $collection->find($locQuery);
         foreach ($cursor as $doc) {
-            var_dump($doc);
+            print_r($doc);
         }
 
 
