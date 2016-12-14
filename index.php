@@ -26,7 +26,7 @@
         echo (" **Connection to database successful** ");
         echo($conn);
         //collection for querying
-        $collection = $db->locations;
+        $c_things = $db->locations;
 
 
 //        $js = "function() {return this.name == 'SMITHFIELD NORTH';}";
@@ -34,12 +34,15 @@
 //        foreach ($cursor as $doc) {
 //            print_r($doc);
 //        }
-        $locQuery = array('name' => 'position');
-
-        $cursor = $collection->find($locQuery);
-        foreach ($cursor as $doc) {
-            print_r($doc);
-        }
+//        $locQuery = array('name' => 'position');
+//
+//        $cursor = $collection->find($locQuery);
+//        foreach ($cursor as $doc) {
+//            print_r($doc);
+//        }
+        // How many have a string property set, regardless of value?
+$count_things = $c_things->count(array('string' => array('$exists' => true)));
+echo "There are $count_things documents with strings in the things collection.\n";
 
 
 
