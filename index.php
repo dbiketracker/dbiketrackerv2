@@ -29,7 +29,7 @@
         $collection = $db->locations;
         
 
-        $js = "function() { return this.name == 'S';}";
+        $js = "function() {return this.name == 'SMITHFIELD NORTH';}";
         $cursor = $collection->find(array('$where' => $js));
         foreach ($cursor as $doc) {
             print_r($doc);
