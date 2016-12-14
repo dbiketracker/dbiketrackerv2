@@ -26,9 +26,10 @@
         echo (" **Connection to database successful** ");
         echo($conn);
 
-        $locQuery = array('name' => 'position');
-
-        $cursor = $collection->find($locQuery);
+        $js = "function() {
+    return this.name == 'SMITHFIELD NORTH' && this.name == 'PARNELL SQUARE NORTH';
+}";
+        $cursor = $collection->find(array('$where' => $js));
         foreach ($cursor as $doc) {
             var_dump($doc);
         }
