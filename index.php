@@ -34,7 +34,7 @@
 //        foreach ($cursor as $doc) {
 //            print_r($doc);
 //        }
-        $locQuery = array('name');
+        $locQuery = array('name' => 'position');
 
         $cursor = $collection->find($locQuery);
         foreach ($cursor as $doc) {
