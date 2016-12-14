@@ -41,7 +41,7 @@
 //            print_r($doc);
 //        }
         // How many have a string property set, regardless of value?
-$count_things = $c_things->count(array('string' => array('$exists' => true)));
+$count_things = $c_things->count(array('name' => array('$exists' => true)));
 echo "There are $count_things documents with strings in the things collection.\n";
 
 
