@@ -30,11 +30,11 @@
         
 
         $js = "function() {
-    return this.name == 'SMITHFIELD NORTH' && this.name == 'PARNELL SQUARE NORTH';
+    return this.name == 'SMITHFIELD NORTH' || this.name == 'PARNELL SQUARE NORTH';
 }";
         $cursor = $collection->find(array('$where' => $js));
         foreach ($cursor as $doc) {
-            var_dump($doc);
+            print_r($doc);
         }
 
 
