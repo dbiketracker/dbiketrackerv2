@@ -41,13 +41,14 @@
 //            print_r($doc);
 //        }
         // How many have a string property set, regardless of value?
-$count_things = $c_things->count(array('0' => array('$exists' => true)));
-echo "There are $count_things documents with strings in the location collection.\n";
+        $count_things = $c_things->count(array('0' => array('$exists' => true)));
+        echo "There are $count_things documents with strings in the location collection.\n";
+        // THIS is how you find something by MongoId
+        $realmongoid = new MongoId($mongoid);
 
-
-
-
-
+// Pass the actual instance of the MongoId object to the query
+        $something = $collection->find(array('_id' => $realmongoid));
+        echo $something->count(); // This should echo 1
         //close the connection
         $conn->close();
         ?>
