@@ -25,6 +25,9 @@
         //echo that our connection was successful
         echo (" **Connection to database successful** ");
         echo($conn);
+        //collection for querying
+        $collection = $db->locations;
+        
 
         $js = "function() {
     return this.name == 'SMITHFIELD NORTH' && this.name == 'PARNELL SQUARE NORTH';
